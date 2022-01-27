@@ -44,8 +44,6 @@ public class Calculate extends HttpServlet {
 		String grade = "a";
 		double grade_point = 0.0;
 		
-		String ab = "mckabcd";
-		
 		String fname = request.getParameter("first_name");
 		String lname = request.getParameter("last_name");
 		int mScore = Integer.parseInt(request.getParameter("maths"));
