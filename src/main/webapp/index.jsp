@@ -10,7 +10,7 @@
 
 
 
-<form action=Login method="post">  
+<form action="Login" method="post">  
 	<br/><br/>
 	Username: <input type="text" name="username"/><br/><br/>
 	Password: <input type="password" name="password"/><br/><br/>

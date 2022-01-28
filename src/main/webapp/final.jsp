@@ -5,10 +5,34 @@
 <head>
 <meta charset="UTF-8">
 <title>Final</title>
+<link rel="stylesheet" href="final.css">
 </head>
 <body>
-<form action="Calculate" method="get">
-	average is : <input type="text" value="request.getParameter('average')">
-</form>
+
+<%
+	double avg = (Double) request.getAttribute("avg");
+	String grade = (String) request.getAttribute("grade");
+	double grade_point = (Double) request.getAttribute("grade_point");
+%>
+
+<img src="http://www.logo-designer.co/wp-content/uploads/2018/05/2018-lambton-college-new-logo-design.jpg"><br><br>
+
+<h1>Final score report</h1><br><br><br><br><br><br>
+<label>Average score is :</label>
+<input type="text" value=<%=avg%>><br><br>
+<label>Your grade is : </label>
+<input type="text" value=<%=grade%>><br><br>
+<label>Your grade point is : </label>
+<input type="text" value=<%=grade_point%>><br><br><br><br>
+
+<h3>Group members are:</h3>
+<ul>
+  <li>Aayush Rishi</li>
+  <li>Dhimant Godhani</li>
+  <li>Vaibhav Hooda</li>
+  <li>Aditya Chauhan</li>
+  <li>Ali Delavarian</li>
+</ul> 
+
 </body>
 </html>

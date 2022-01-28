@@ -1,0 +1,27 @@
+@charset "UTF-8";
+
+body {
+  background-color: #e7e785;
+}
+h3 {
+  color: blue;
+}
+h1 {
+	text-align: center;
+  color: red;
+  font-size: 60px;
+}
+p {
+  font-size: 20px;
+}
+
+img{
+	float: right;
+}
+
+input{
+	font-size: 20px;
+}
+label{
+	font-size: 20px;
+}

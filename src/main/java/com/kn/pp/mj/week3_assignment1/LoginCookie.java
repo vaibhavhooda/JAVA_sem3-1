@@ -1,3 +1,4 @@
+package com.kn.pp.mj.week3_assignment1;
 
 
 import java.io.IOException;
@@ -10,19 +11,20 @@ import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
-/**
- * Servlet implementation class LoginSession
- */
-@WebServlet("/LoginSession")
-public class LoginSession extends HttpServlet {
+/* Date - 25 Jan
+Author - Aayush Rishi
+Description - servlet to verify password and post welcome using cookie
+*/
+
+@WebServlet("/LoginCookie")
+public class LoginCookie extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public LoginSession() {
+    public LoginCookie() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -51,11 +53,13 @@ public class LoginSession extends HttpServlet {
 			out.println("<br>Welcome, " + userN);  
 		
 				
-			HttpSession session = request.getSession();
-			session.setAttribute("ussername", userN);
+			Cookie ck = new Cookie("username",userN);  //create cookie object
+            response.addCookie(ck);   // add value to cookie
             
-            
-            out.print("<a href='QuickServlet'> visit </a>");
+            //create submit button
+            out.print("<form action='QuickServlet' method>");
+            out.print("<input type='submit' value='go'>");
+            out.print("</form>");
             out.close();
 	    }  
 	    else{  
