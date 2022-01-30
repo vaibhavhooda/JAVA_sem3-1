@@ -45,6 +45,8 @@ public class CalculateAvg extends HttpServlet {
 			throws ServletException, IOException {
 
 		int sum = Integer.parseInt(request.getParameter("sum"));
+		int max = Integer.parseInt(request.getParameter("max"));
+		int min = Integer.parseInt(request.getParameter("min"));
 
 		double avg = 0;
 		String grade = "a";
@@ -88,6 +90,8 @@ public class CalculateAvg extends HttpServlet {
 		}
 
 		request.setAttribute("avg", avg);
+		request.setAttribute("max", max);
+		request.setAttribute("min", min);
 		request.setAttribute("grade", grade);
 		request.setAttribute("grade_point", grade_point);
 		RequestDispatcher rd = request.getRequestDispatcher("final.jsp");

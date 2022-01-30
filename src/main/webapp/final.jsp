@@ -11,6 +11,8 @@
 
 <%
 	double avg = (Double) request.getAttribute("avg");
+	int max = (Integer) request.getAttribute("max");
+	int min = (Integer) request.getAttribute("min");
 	String grade = (String) request.getAttribute("grade");
 	double grade_point = (Double) request.getAttribute("grade_point");
 %>
@@ -20,6 +22,10 @@
 <h1>Final score report</h1><br><br><br><br><br><br>
 <label>Average score is :</label>
 <input type="text" value=<%=avg%>><br><br>
+<label>Maximum score is :</label>
+<input type="text" value=<%=max%>><br><br>
+<label>Minimum score is :</label>
+<input type="text" value=<%=min%>><br><br>
 <label>Your grade is : </label>
 <input type="text" value=<%=grade%>><br><br>
 <label>Your grade point is : </label>
