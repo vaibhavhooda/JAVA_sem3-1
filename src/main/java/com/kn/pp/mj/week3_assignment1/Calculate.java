@@ -102,8 +102,6 @@ public class Calculate extends HttpServlet {
 		
 
 		response.sendRedirect("CalculateAvg?sum=" + sum + "&max=" + max + "&min=" + min);
-
-		doGet(request, response);
 	}
 
 }

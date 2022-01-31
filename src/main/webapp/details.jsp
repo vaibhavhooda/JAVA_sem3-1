@@ -7,6 +7,10 @@
 <title>Details</title>
 </head>
 <body>
+	<h2>Welcome ${name}  </h2>
+	<h3>SessionName: ${sname}  </h3>
+	<h3>CookieName: ${cname}  </h3>
+	
 	<h1>Enter your name and marks</h1>
 	<form action="Calculate" method="post">
          First name: <input type = "text" name = "first_name" /><br><br>
