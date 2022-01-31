@@ -57,8 +57,52 @@ public class Calculate extends HttpServlet {
 		int cScore = Integer.parseInt(request.getParameter("chemistry"));
 
 		int sum = mScore + eScore + hScore + pScore + cScore;
+		int max = 0;
+		if( mScore > max )
+		{
+			max = mScore;
+		}
+		if( eScore > max )
+		{
+			max = eScore;
+		}
+		if( hScore > max )
+		{
+			max = hScore;
+		}
+		if( pScore > max )
+		{
+			max = pScore;
+		}
+		if( cScore > max )
+		{
+			max = cScore;
+		}
+		
+		int min = Integer.MAX_VALUE;
+		if( mScore < min )
+		{
+			min = mScore;
+		}
+		if( eScore < min )
+		{
+			min = eScore;
+		}
+		if( hScore < min )
+		{
+			min = hScore;
+		}
+		if( pScore < min )
+		{
+			min = pScore;
+		}
+		if( cScore < min )
+		{
+			min = cScore;
+		}
+		
 
-		response.sendRedirect("CalculateAvg?sum=" + sum);
+		response.sendRedirect("CalculateAvg?sum=" + sum + "&max=" + max + "&min=" + min);
 
 		doGet(request, response);
 	}
