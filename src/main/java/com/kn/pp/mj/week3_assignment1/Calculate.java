@@ -31,19 +31,14 @@ public class Calculate extends HttpServlet {
 		// TODO Auto-generated constructor stub
 	}
 
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
-	 *      response)
-	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
-	}
 
 	/**
+	 * @author vaibhavhooda
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
 	 *      response)
+	 *      This function is fetching marks from the post request and then it is 
+	 *      performing some calculations on the marks & then redirecting to the CalculateAvg
+	 *      file. 
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
@@ -56,7 +51,10 @@ public class Calculate extends HttpServlet {
 		int pScore = Integer.parseInt(request.getParameter("physics"));
 		int cScore = Integer.parseInt(request.getParameter("chemistry"));
 
+		// Calculating sum of all marks
 		int sum = mScore + eScore + hScore + pScore + cScore;
+		
+		// Calculating maximum marks
 		int max = 0;
 		if( mScore > max )
 		{
@@ -79,6 +77,7 @@ public class Calculate extends HttpServlet {
 			max = cScore;
 		}
 		
+		//Calculating minimum marks
 		int min = Integer.MAX_VALUE;
 		if( mScore < min )
 		{
