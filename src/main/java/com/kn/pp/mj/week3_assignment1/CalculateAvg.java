@@ -39,9 +39,9 @@ public class CalculateAvg extends HttpServlet {
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
-	 *      response)
-	 *      This function is calculating the grades on the basis of the avg passed,
-	 *      then it sets the request object with the results and send it to final.jsp page.
+	 *      response) This function is calculating the grades on the basis of the
+	 *      avg passed, then it sets the request object with the results and send it
+	 *      to final.jsp page.
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {

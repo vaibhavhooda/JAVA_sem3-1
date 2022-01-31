@@ -31,14 +31,12 @@ public class Calculate extends HttpServlet {
 		// TODO Auto-generated constructor stub
 	}
 
-
 	/**
 	 * @author vaibhavhooda
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
-	 *      response)
-	 *      This function is fetching marks from the post request and then it is 
-	 *      performing some calculations on the marks & then redirecting to the CalculateAvg
-	 *      file. 
+	 *      response) This function is fetching marks from the post request and then
+	 *      it is performing some calculations on the marks & then redirecting to
+	 *      the CalculateAvg file.
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
@@ -53,53 +51,42 @@ public class Calculate extends HttpServlet {
 
 		// Calculating sum of all marks
 		int sum = mScore + eScore + hScore + pScore + cScore;
-		
+
 		// Calculating maximum marks
 		int max = 0;
-		if( mScore > max )
-		{
+		if (mScore > max) {
 			max = mScore;
 		}
-		if( eScore > max )
-		{
+		if (eScore > max) {
 			max = eScore;
 		}
-		if( hScore > max )
-		{
+		if (hScore > max) {
 			max = hScore;
 		}
-		if( pScore > max )
-		{
+		if (pScore > max) {
 			max = pScore;
 		}
-		if( cScore > max )
-		{
+		if (cScore > max) {
 			max = cScore;
 		}
-		
-		//Calculating minimum marks
+
+		// Calculating minimum marks
 		int min = Integer.MAX_VALUE;
-		if( mScore < min )
-		{
+		if (mScore < min) {
 			min = mScore;
 		}
-		if( eScore < min )
-		{
+		if (eScore < min) {
 			min = eScore;
 		}
-		if( hScore < min )
-		{
+		if (hScore < min) {
 			min = hScore;
 		}
-		if( pScore < min )
-		{
+		if (pScore < min) {
 			min = pScore;
 		}
-		if( cScore < min )
-		{
+		if (cScore < min) {
 			min = cScore;
 		}
-		
 
 		response.sendRedirect("CalculateAvg?sum=" + sum + "&max=" + max + "&min=" + min);
 	}

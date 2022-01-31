@@ -22,8 +22,8 @@ public class QuickServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * @see HttpServlet#HttpServlet()
-	 * This is constructor for the QuickServlet class.
+	 * @see HttpServlet#HttpServlet() This is constructor for the QuickServlet
+	 *      class.
 	 */
 	public QuickServlet() {
 		super();
@@ -32,9 +32,10 @@ public class QuickServlet extends HttpServlet {
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
-	 *      response)
-	 *      This function is used to post data of session and cookie on the details page 
-	 *      where the user enters there name and marks of 5 subjects to provide the average of 5 subjects to the user and Grade Scheme.
+	 *      response) This function is used to post data of session and cookie on
+	 *      the details page where the user enters there name and marks of 5
+	 *      subjects to provide the average of 5 subjects to the user and Grade
+	 *      Scheme.
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
@@ -43,19 +44,33 @@ public class QuickServlet extends HttpServlet {
 			String user = null;
 			String sessionName = null;
 			String cookieName = null;
-			
+			user = request.getParameter("username");
+
 			// fetching session and set it in a variable
 			HttpSession session = request.getSession(false);
 			sessionName = (String) session.getAttribute("username");
-			
-			// fetching cookie and set it in a variable
-			Cookie ck[] = request.getCookies();
-			cookieName = ck[0].getValue();
 
-			user = request.getParameter("username");
+			// fetching cookie and set it in a variable
+			Cookie cookie = null;
+		    Cookie[] cookies = null;
+		    cookies = request.getCookies();
+		    if( cookies != null ) 
+		    {
+		         for (int i = 0; i < cookies.length; i++)
+		         {
+		            cookie = cookies[i];
+		            if( cookie.getName().equals("username") )
+		            {
+		            	cookieName = cookie.getValue();
+		            }
+		         }
+		      }
+			
 
 			String destination = "details.jsp";
-			RequestDispatcher requestDispatcher = request.getRequestDispatcher(destination); // create a request dispatcher object to details.jsp 
+			RequestDispatcher requestDispatcher = request.getRequestDispatcher(destination); // create a request
+																								// dispatcher object to
+																								// details.jsp
 			request.setAttribute("name", user);
 			request.setAttribute("sname", sessionName);
 			request.setAttribute("cname", cookieName);
