@@ -1,0 +1,21 @@
+{
+    "firstName": "Aayush",
+    "lastName": "Rishi",
+    "address": [
+      {
+        "street": "Mains",
+        "city": "Brampton",
+        "province": "Ontario"
+      }
+    ],
+    "scores": [
+      {
+        "Maths": "90",
+        "Physics": "89",
+        "Chemistry": "78",
+        "English": "87",
+        "Computer": "80"
+      }
+    ],
+    "Contact": "3289491798"
+}
